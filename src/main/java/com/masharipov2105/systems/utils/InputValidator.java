@@ -26,4 +26,30 @@ public final class InputValidator{
 			throw new InvalidNumberException(number.trim());
 		}
 	}
+
+
+	public static char parseCommand(String command) throws NullPointerException, InvalidCommandException{
+
+		final char[] commands = {'+', '-', '*', '/'}; 
+
+		if (command == null || command.trim().isEmpty()){
+
+			throw new NullPointerException("The command cannot be null or empty");
+		}
+
+		if (command.trim().length() > 1){
+
+			throw new InvalidCommandException(command.trim());
+		}
+
+		for (char i: commands){
+
+			if (command.charAt(0) == i){
+
+				return command.charAt(0);
+			}
+		}
+
+		throw new InvalidCommandException(command.trim());
+	}
 }
