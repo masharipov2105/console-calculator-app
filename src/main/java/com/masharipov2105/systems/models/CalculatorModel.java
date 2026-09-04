@@ -3,20 +3,20 @@ package com.masharipov2105.systems.models;
 public class CalculatorModel{
 
 	//fields
-	private double firstNumber;
-	private double secondNumber;
+	private String firstNumber;
+	private String secondNumber;
 	private char command;
 
 	// constructor
-	public CalculatorModel(double firstNumber, char command, double secondNumber){
+	public CalculatorModel(String firstNumber, String secondNumber, char command){
         //initialize
 		this.firstNumber = firstNumber;
-		this.command = command;
 		this.secondNumber = secondNumber;
+		this.command = command;
 	}
 
 	//getters
-	public double getFirstNumber(){
+	public String getFirstNumber(){
 
 		return this.firstNumber;
 	}
@@ -26,13 +26,13 @@ public class CalculatorModel{
 		return this.command;
 	}
 
-	public double getSecondNumber(){
+	public String getSecondNumber(){
 
 		return this.secondNumber;
 	}
 
 	//setters
-	public void setFirstNumber(double newNumber){
+	public void setFirstNumber(String newNumber){
 
 		this.firstNumber = newNumber;
 	}
@@ -42,7 +42,7 @@ public class CalculatorModel{
 		this.command = newCommand;
 	}
 
-	public void setSecondNumber(double newNumber){
+	public void setSecondNumber(String newNumber){
 
 		this.secondNumber = newNumber;
 	}
@@ -51,7 +51,7 @@ public class CalculatorModel{
 	@Override
 	public String toString(){
 
-		String finalString = String.format("%.3f %c %.3f", this.firstNumber, this.command, this.secondNumber);
+		String finalString = String.format("%s %c %s", this.firstNumber, this.command, this.secondNumber);
 		return finalString;
 	}
 }
