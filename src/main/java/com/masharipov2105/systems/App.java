@@ -105,6 +105,8 @@ public class App{
 			} else if (InputValidator.isNo(answer)){
 				this.isRun = false;
 				System.out.println("\nGoodbye");
+			} else{
+				toAsk();
 			}
 		} catch(NullPointerException e){
 
