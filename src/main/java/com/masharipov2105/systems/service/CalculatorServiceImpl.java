@@ -35,7 +35,7 @@ public class CalculatorServiceImpl implements CalculatorService{
 
 				if (num2 == 0.0){
 
-					throw new DivisionByZeroException();
+					throw new CalculatorException("Division by zero is not possible");
 				}
 
 				result = (num1 / num2);

@@ -1,12 +1,14 @@
 package com.masharipov2105.systems;
-import com.masharipov2105.systems.App;
+
 import com.masharipov2105.systems.exceptions.CalculatorException;
-import com.masharipov2105.systems.service.CalculatorServiceImpl;
+import com.masharipov2105.systems.service.*;
+import com.masharipov2105.systems.controller.CalculatorController;
 
 public class Main {
-    public static void main(String[] args) throws CalculatorException{
+    public static void main(String[] args) throws CalculatorException, NullPointerException{
         
-        App app = new App(new CalculatorServiceImpl());
-        app.run();
+        CalculatorService service = new CalculatorServiceImpl();
+        CalculatorController controller = new CalculatorController(service);
+        controller.start();
     }
 }
